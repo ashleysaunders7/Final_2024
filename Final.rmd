@@ -101,6 +101,16 @@ colPerc(table1)
 
 According to the numerical data, 73.8% of the diseased males had received the placebo, whereas 26.2% had received the vaccine. 49.99% had received the vaccine, and 50.01% had received the placebo for those who are acceptable. Overall, compared to 1.02% of males receiving the vaccine, 2.82% of guys receiving the placebo had COVID, suggesting that the immunization lowers infection rates. These results imply that the immunization is successful in reducing COVID-19 in males. This allows us to correlate it to the barplots that demonstrate its success.
 
+### Inferential Results
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+Malefish <- fisher.test(table1)
+Malefish
+```
+
+Fisher's Exact Test yields a very small p-value, 0.00000000000000022, which is the main result to pay attention to. This indicates that it is highly improbable that the observed variations in infection rates between the vaccine and placebo groups happened by accident. We reject the null hypothesis, which holds that infection rates are unaffected by therapy. Males who received the vaccine had an approximately 2.8-fold higher risk of contracting COVID-19 than those who received a placebo, as indicated by the odds ratio of roughly 2.82. These findings suggest that the immunization has little effect on preventing COVID-19 in men.
+
 ## Females
 
 
