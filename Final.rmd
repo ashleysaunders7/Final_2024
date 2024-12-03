@@ -61,6 +61,37 @@ male_summary
 
 For men, this is the information that has been provided at this point. 18392 men are present. 18037 are acceptable but 355 have COVID. Let's add a barplot for a visual depiction since this is insufficient to demonstrate a trend.
 
+### Visual Results
+```{r}
+# Bar plot
+
+# Summarize the data for Males by infection status and treatment
+male_summary_data <- Male %>%
+  group_by(infected, treatment) %>%
+  summarize(count = n(), .groups = "drop") %>%
+  mutate(prcnt = count / sum(count))
+
+# Bar plot for count of infected vs treatment
+male_plot_count <- ggplot(male_summary_data, aes(x = infected, y = count, fill = treatment))
+male_plot_count + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Number of Males Infected by Treatment",
+       x = "Infection Status", y = "Count of Infected Males") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+
+# Bar plot for percentage of infected vs treatment
+male_plot_percent <- ggplot(male_summary_data, aes(x = infected, y = prcnt * 100, fill = treatment))
+male_plot_percent + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Percentage of Males Infected by Treatment",
+       x = "Infection Status", y = "Percentage of Infected Males") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+```
+
+The number of males infected with COVID-19 is displayed in the barplots above. On both graphs, the findings are comparable to the placebo, but visually, males who receive the immunization have lower COVID than the placebo. They still differ visually, but in order to determine whether the difference is significant, we must perform a statistical study.
+
 ## Females
 
 
