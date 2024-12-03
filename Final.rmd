@@ -111,6 +111,22 @@ Malefish
 
 Fisher's Exact Test yields a very small p-value, 0.00000000000000022, which is the main result to pay attention to. This indicates that it is highly improbable that the observed variations in infection rates between the vaccine and placebo groups happened by accident. We reject the null hypothesis, which holds that infection rates are unaffected by therapy. Males who received the vaccine had an approximately 2.8-fold higher risk of contracting COVID-19 than those who received a placebo, as indicated by the odds ratio of roughly 2.82. These findings suggest that the immunization has little effect on preventing COVID-19 in men.
 
+```{r}
+# Calculate effectiveness
+male_effect <- Malefish$p.value / (Malefish$p.value + 1)
+effectiveness_male <- (1 - 1 / Malefish$estimate) * 100
+print(effectiveness_male)
+
+# Calculate effectiveness confidence interval
+male_low <- (1 - 1 / Malefish$conf.int[1]) * 100
+male_hi <- (1 - 1 / Malefish$conf.int[2]) * 100
+options(digits = 2)
+
+#print 
+male_low
+male_hi
+```
+
 ## Females
 
 
