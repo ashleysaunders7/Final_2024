@@ -92,6 +92,15 @@ male_plot_percent +
 
 The number of males infected with COVID-19 is displayed in the barplots above. On both graphs, the findings are comparable to the placebo, but visually, males who receive the immunization have lower COVID than the placebo. They still differ visually, but in order to determine whether the difference is significant, we must perform a statistical study.
 
+### Numerical Results
+```{r}
+table1 <- xtabs(~infected + treatment, data=Male)
+rowPerc(table1)
+colPerc(table1)
+```
+
+According to the numerical data, 73.8% of the diseased males had received the placebo, whereas 26.2% had received the vaccine. 49.99% had received the vaccine, and 50.01% had received the placebo for those who are acceptable. Overall, compared to 1.02% of males receiving the vaccine, 2.82% of guys receiving the placebo had COVID, suggesting that the immunization lowers infection rates. These results imply that the immunization is successful in reducing COVID-19 in males. This allows us to correlate it to the barplots that demonstrate its success.
+
 ## Females
 
 
