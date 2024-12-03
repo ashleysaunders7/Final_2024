@@ -127,6 +127,10 @@ male_low
 male_hi
 ```
 
+### `r effectiveness_male`% Effectiveness with Confidence Interval: `r male_low`%  to `r male_hi`%
+
+The COVID-19 vaccine for men is effective, with an efficacy of 64.48%, which is above the 50% threshold for success. The confidence interval ranges from 54.75% to 72.32%, further supporting its effectiveness in reducing infection rates among males. The null hypothesis (no effect) is rejected, and the alternative hypothesis (vaccine lowers infection rates) is accepted, based on the low p-value from Fisher's Exact Test and an odds ratio of 2.82. This means vaccinated men are nearly 2.8 times more likely to avoid COVID-19 compared to those who received a placebo. The confidence interval further confirms the vaccine’s strong protective effect.
+
 ## Females
 
 
