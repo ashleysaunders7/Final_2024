@@ -333,7 +333,35 @@ druguser_summary <- bind_rows(druguser_summary, druguser_column_totals)
 druguser_summary
 ```
 
-This is the information that drug users have been given thus far. 3060 people use drugs. While 3000 are OK, 60 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid.
+This is the information that drug users have been given thus far. 3060 people use drugs. While 3000 are OK, 60 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid. 
 
+### Visual Results
+```{r}
+# Summarize the data for DrugUser by infection status and treatment
+druguser_summary_data <- DrugUser %>%
+  group_by(infected, treatment) %>%
+  summarize(count = n(), .groups = "drop") %>%
+  mutate(prcnt = count / sum(count))
+
+# Bar plot for count of infected vs treatment
+druguser_plot_count <- ggplot(druguser_summary_data, aes(x = infected, y = count, fill = treatment))
+druguser_plot_count + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Number of Drug Users Infected by Treatment",
+       x = "Infection Status", y = "Count of Infected Drug Users") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+
+# Bar plot for percentage of infected vs treatment
+druguser_plot_percent <- ggplot(druguser_summary_data, aes(x = infected, y = prcnt * 100, fill = treatment))
+druguser_plot_percent + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Percentage of Drug Users Infected by Treatment",
+       x = "Infection Status", y = "Percentage of Infected Drug Users") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+```
+
+The number of drug users with COVID-19 is displayed in the barplots above. In terms of visuals, drug users who receive the immunization have higher COVID than those who receive a placebo. Even though the difference seems substantial on the surface, a statistical analysis is necessary to determine whether it is statistically significant.
 
 # Overall Results and Conclusions
