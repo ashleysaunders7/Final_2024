@@ -222,6 +222,22 @@ The vaccine's efficacy for females is shown above. A vaccine is considered effec
 
 ## LGBTQ
 
+### Summary of LGBTQ
+```{r}
+gay_summary <- Gay %>%
+  group_by(treatment, infected) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  pivot_wider(names_from = infected, values_from = count, values_fill = 0)
+gay_summary <- gay_summary %>%
+  mutate(total = rowSums(select(., -treatment)))
+gay_column_totals <- gay_summary %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  mutate(treatment = "Total")
+gay_summary <- bind_rows(gay_summary, gay_column_totals)
+gay_summary
+```
+
+This is the LGBTQ information that has been provided thus far. 3060 LGBTQ people are present. While 3000 are OK, 60 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid.
 
 
 
