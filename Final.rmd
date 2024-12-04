@@ -403,4 +403,10 @@ drug_hi
 
 The efficacy of the COVID-19 vaccine for drug users is shown above. A vaccine is considered effective if its efficacy is over 50%. With an efficacy of 91.3% and a confidence interval of 78.0% to 97.3%, we can conclude that the vaccine is highly effective at reducing infection rates among drug users. The alternative hypothesis suggests the vaccine lowers infection rates, while the null hypothesis says it has no effect. The very low p-value from Fisher's Exact Test and an odds ratio of 0.087 lead us to reject the null hypothesis. This means the vaccine significantly lowers infection rates for drug users. The odds ratio of 0.087 shows that vaccinated drug users have an 11.5 times lower risk of contracting COVID-19 compared to those who received the placebo. Since the odds ratio is less than 1, the vaccine is highly effective. The confidence interval further supports this, confirming the vaccine’s strong protective effect for drug users.
 
-# Overall Results and Conclusions
+# Overall Results and Conclusions 
+
+## Conclusion for Females
+For males, the efficacy of the COVID vaccine is 64.48%, with a confidence interval between 54.75% and 72.32%. This conclusion is well supported by statistical tests: The null hypothesis of no vaccine impact was rejected by Fisher's Exact Test, which revealed a highly significant p-value (\(p = 2.2 \times 10^{-16}\)).Male recipients of the vaccination had a nearly 2.8-fold lower risk of infection than those receiving a placebo, according to the odds ratio of 2.82. Overall, the vaccination greatly lowers the risk of illness in males, demonstrating its efficacy in this population. 
+
+
+
