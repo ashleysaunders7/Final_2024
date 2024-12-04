@@ -305,6 +305,10 @@ gay_low
 gay_hi
 ```
 
+### `r effectiveness_gay`% Effectiveness with Confidence Interval: `r gay_low`%  to `r gay_hi`%
+
+The efficacy of the COVID-19 vaccine for gay people is shown above. A vaccine is considered effective if its efficacy is above 50%. With an efficacy of 76.6% and a confidence interval between 55.06% and 88.74%, we can conclude that the vaccine is effective in reducing infection rates among gay people. The alternative hypothesis suggests the vaccine lowers infection rates, while the null hypothesis suggests it has no effect. The very low p-value from Fisher's Exact Test and an odds ratio of 4.3 lead us to reject the null hypothesis and accept the alternative. This means the vaccine is effective in lowering infection rates. However, the odds ratio indicates that gay people who received the vaccine had a nearly 4.3-fold higher risk of contracting COVID-19 compared to those who got the placebo. The confidence interval further supports this, confirming the vaccine has a significant protective effect for the LGBTQ community.
+
 ## Druggies
 
 
