@@ -239,7 +239,36 @@ gay_summary
 
 This is the LGBTQ information that has been provided thus far. 3060 LGBTQ people are present. While 3000 are OK, 60 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid.
 
+### Visual Results
+```{r}
+# Bar plot
 
+# Summarize the data for Gay by infection status and treatment
+gay_summary_data <- Gay %>%
+  group_by(infected, treatment) %>%
+  summarize(count = n(), .groups = "drop") %>%
+  mutate(prcnt = count / sum(count))
+
+# Bar plot for count of infected vs treatment
+gay_plot_count <- ggplot(gay_summary_data, aes(x = infected, y = count, fill = treatment))
+gay_plot_count + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Number of Gay Individuals Infected by Treatment",
+       x = "Infection Status", y = "Count of Infected Individuals") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+
+# Bar plot for percentage of infected vs treatment
+gay_plot_percent <- ggplot(gay_summary_data, aes(x = infected, y = prcnt * 100, fill = treatment))
+gay_plot_percent + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Percentage of Gay Individuals Infected by Treatment",
+       x = "Infection Status", y = "Percentage of Infected Individuals") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+```
+
+The number of LGBTQ people infected with COVID-19 is displayed in the barplots above. Compared to placebo, visually gay people who receive the immunization had lower COVID rates. Although they differ greatly visually, we must perform a statistical analysis to see whether the difference is significant.
 
 ## Druggies
 
