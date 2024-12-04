@@ -405,7 +405,7 @@ The efficacy of the COVID-19 vaccine for drug users is shown above. A vaccine is
 
 # Overall Results and Conclusions 
 
-## Conclusion for Females
+## Conclusion for Males
 For males, the efficacy of the COVID vaccine is 64.48%, with a confidence interval between 54.75% and 72.32%. This conclusion is well supported by statistical tests: The null hypothesis of no vaccine impact was rejected by Fisher's Exact Test, which revealed a highly significant p-value (\(p = 2.2 \times 10^{-16}\)).Male recipients of the vaccination had a nearly 2.8-fold lower risk of infection than those receiving a placebo, according to the odds ratio of 2.82. Overall, the vaccination greatly lowers the risk of illness in males, demonstrating its efficacy in this population. 
 
 
