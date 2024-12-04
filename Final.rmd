@@ -181,6 +181,15 @@ female_plot_percent +
 
 The number of females infected with COVID-19 is displayed in the barplots above. On both graphs, the results are comparable to the placebo, but visually, females who receive the immunization have lower COVID than the placebo. They still differ visually, but in order to determine whether the difference is significant, we must perform a statistical study.
 
+### Numerical Results
+```{r}
+table2 <- xtabs(~infected + treatment, data=Female)
+rowPerc(table2)
+colPerc(table2)
+```
+
+According to the numerical data, 35% of the diseased females had received the vaccine, whereas 65% had received the placebo. Half of individuals who are doing well had received the vaccine, and the other half had received the placebo. Overall, 1.4% of females receiving the immunization had COVID, but 2.6% of those receiving the placebo did, suggesting that the vaccine lowers infection rates. These results imply that the immunization is successful in reducing female COVID-19 rates. This is consistent with the barplots demonstrating the efficacy of the vaccine.
+
 ## LGBTQ
 
 
