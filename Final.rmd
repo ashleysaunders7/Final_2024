@@ -411,5 +411,8 @@ For males, the efficacy of the COVID vaccine is 64.48%, with a confidence interv
 ## Conclusion for Females
 With a confidence interval spanning from 32.79% to 56.98%, the effectiveness of the COVID vaccine for females is 46.13%. Additional information is provided via statistical tests: With a significant p-value (\(p = 1 \times 10^{-8}\)) from Fisher's Exact Test, the null hypothesis that there is no vaccine effect was rejected. With an odds ratio of 1.9, female recipients of the vaccine had a nearly 1.9-fold increased risk of contracting the infection in comparison to those who received a placebo. Overall, the vaccination has a limited level of efficiency and should be carefully examined for females, even though it does show some protective impact.
 
+## Conclusion for LGBTQ
+With a confidence interval spanning from 55.06% to 88.74%, the effectiveness of the COVID vaccine for gay people is 76.6%. This conclusion is well supported by statistical tests: The null hypothesis that the vaccine had no effect was rejected by the highly significant p-value (\(p = 7 \times 10^{-7}\)) obtained from Fisher's Exact Test. Gay people who received the vaccine had an almost 4.3-fold higher risk of contracting the virus than those who received a placebo, according to the odds ratio of 4.3. All things considered, the vaccination considerably lowers the risk of infection for LGBT people, demonstrating its efficacy in this demographic.
+
 
 
