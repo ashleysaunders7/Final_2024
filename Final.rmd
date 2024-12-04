@@ -373,4 +373,32 @@ colPerc(table4)
 
 According to the numerical figures, 91.7% of infected drug users had received the vaccine, whereas 8.3% had received a placebo. 49.0% of those who are okay had received the vaccine, whereas 51.0% had received the placebo. Overall, 3.6% of drug users who received the vaccine and 0.33% of those who received the placebo got COVID, suggesting that the vaccine was linked to a greater infection risk in this population. These results imply that the vaccine might not be successful in reducing drug users' incidence of COVID-19. This is consistent with the barplots, which graphically show the increased infection rates among drug users who have received vaccinations.
 
+### Inferential Results
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+DrugUserfish <- fisher.test(table4)
+DrugUserfish
+```
+
+The Fisher's Exact Test provides the most important finding, with a p-value of 0.000000000003, which is incredibly small and suggests that the observed differences in infection rates between the vaccine and placebo groups are highly unlikely to have happened by accident. The null hypothesis is disproved since it presupposes that infection rates are unaffected by therapy. Drug users who received the vaccine had an 11.5-fold lower risk of contracting COVID-21 than those who received a placebo, according to the odds ratio, which is roughly 0.087. According to these findings, the vaccine is quite successful in preventing COVID-19 in drug users. This is consistent with the statistical findings that indicate lower infection rates among those who have received vaccinations in this cohort.
+
+```{r}
+# Calculate effectiveness
+DrugUserfish <- fisher.test(table4)
+effectiveness_drug <- (1 - DrugUserfish$estimate) * 100
+print(effectiveness_drug)
+
+# Calculate effectiveness confidence level
+drug_low <- (1 - DrugUserfish$conf.int[2]) * 100  
+drug_hi <- (1 - DrugUserfish$conf.int[1]) * 100  
+options(digits = 2)
+
+#print
+drug_low
+drug_hi
+```
+
+
+
 # Overall Results and Conclusions
