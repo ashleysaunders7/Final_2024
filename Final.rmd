@@ -364,4 +364,13 @@ druguser_plot_percent +
 
 The number of drug users with COVID-19 is displayed in the barplots above. In terms of visuals, drug users who receive the immunization have higher COVID than those who receive a placebo. Even though the difference seems substantial on the surface, a statistical analysis is necessary to determine whether it is statistically significant.
 
+### Numerical Results
+```{r}
+table4 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table4)
+colPerc(table4)
+```
+
+According to the numerical figures, 91.7% of infected drug users had received the vaccine, whereas 8.3% had received a placebo. 49.0% of those who are okay had received the vaccine, whereas 51.0% had received the placebo. Overall, 3.6% of drug users who received the vaccine and 0.33% of those who received the placebo got COVID, suggesting that the vaccine was linked to a greater infection risk in this population. These results imply that the vaccine might not be successful in reducing drug users' incidence of COVID-19. This is consistent with the barplots, which graphically show the increased infection rates among drug users who have received vaccinations.
+
 # Overall Results and Conclusions
