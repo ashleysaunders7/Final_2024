@@ -216,6 +216,10 @@ female_low
 female_hi
 ```
 
+### `r effectiveness_female`% Effectiveness with Confidence Interval: `r female_low`%  to `r female_hi`%
+
+The vaccine's efficacy for females is shown above. A vaccine is considered effective if its efficacy is above 50%. Since the calculated efficacy is 46.13%, with a confidence interval of 32.79% to 56.98%, we conclude that the vaccine is ineffective in reducing infection rates among females. The alternative hypothesis suggested the vaccine lowers infection rates, while the null hypothesis stated it has no effect. Based on the very low p-value from Fisher's Exact Test and an odds ratio of 1.9, we reject the null hypothesis and accept the alternative. This means the vaccine actually increases the risk of infection in females. The odds ratio shows that women who got the vaccine were nearly 1.9 times more likely to contract COVID-19 than those who received the placebo. The confidence interval supports this, indicating a modest, and likely negative, impact on vaccine effectiveness.
+
 ## LGBTQ
 
 
