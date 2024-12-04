@@ -150,7 +150,39 @@ female_summary
 
 For the women, here is the information that has been provided thus far. The number of females is 18328. While 17963 are okay, 365 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid.
 
+### Visual Results
+```{r}
+# Bar plot
+
+# Summarize the data for Females by infection status and treatment
+female_summary_data <- Female %>%
+  group_by(infected, treatment) %>%
+  summarize(count = n(), .groups = "drop") %>%
+  mutate(prcnt = count / sum(count))
+
+# Bar plot for count of infected vs treatment
+female_plot_count <- ggplot(female_summary_data, aes(x = infected, y = count, fill = treatment))
+female_plot_count + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Number of Females Infected by Treatment",
+       x = "Infection Status", y = "Count of Infected Females") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+
+# Bar plot for percentage of infected vs treatment
+female_plot_percent <- ggplot(female_summary_data, aes(x = infected, y = prcnt * 100, fill = treatment))
+female_plot_percent + 
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Percentage of Females Infected by Treatment",
+       x = "Infection Status", y = "Percentage of Infected Females") +
+  scale_fill_manual(values = c("placebo" = "gray", "vaccine" = "blue")) +
+  theme_minimal()
+```
+
+The number of females infected with COVID-19 is displayed in the barplots above. On both graphs, the results are comparable to the placebo, but visually, females who receive the immunization have lower COVID than the placebo. They still differ visually, but in order to determine whether the difference is significant, we must perform a statistical study.
+
 ## LGBTQ
+
 
 
 
