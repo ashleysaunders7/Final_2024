@@ -148,7 +148,7 @@ female_summary <- bind_rows(female_summary, female_column_totals)
 female_summary
 ```
 
-For the women, here is the information that has been provided thus far. The number of females is 18328. While 17963 are okay, 365 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid.
+For the women, here is the information that has been provided thus far. The number of females is 18328. While 17963 are okay, 365 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid.
 
 ## LGBTQ
 
