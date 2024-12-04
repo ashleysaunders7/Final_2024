@@ -311,5 +311,29 @@ The efficacy of the COVID-19 vaccine for gay people is shown above. A vaccine is
 
 ## Druggies
 
+### Summary of DrugUser
+```{r}
+druguser_summary <- DrugUser %>%
+  group_by(treatment, infected) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  pivot_wider(names_from = infected, values_from = count, values_fill = 0)
+
+# Add total column
+druguser_summary <- druguser_summary %>%
+  mutate(total = rowSums(select(., -treatment)))
+
+# Add total row for each treatment
+druguser_column_totals <- druguser_summary %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  mutate(treatment = "Total")
+
+# Combine the totals with the main data
+druguser_summary <- bind_rows(druguser_summary, druguser_column_totals)
+
+druguser_summary
+```
+
+This is the information that drug users have been given thus far. 3060 people use drugs. While 3000 are OK, 60 have COVID. Since this is insufficient to demonstrate a trend, let's now include a barplot for a visual aid.
+
 
 # Overall Results and Conclusions
