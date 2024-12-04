@@ -414,5 +414,8 @@ With a confidence interval spanning from 32.79% to 56.98%, the effectiveness of 
 ## Conclusion for LGBTQ
 With a confidence interval spanning from 55.06% to 88.74%, the effectiveness of the COVID vaccine for gay people is 76.6%. This conclusion is well supported by statistical tests: The null hypothesis that the vaccine had no effect was rejected by the highly significant p-value (\(p = 7 \times 10^{-7}\)) obtained from Fisher's Exact Test. Gay people who received the vaccine had an almost 4.3-fold higher risk of contracting the virus than those who received a placebo, according to the odds ratio of 4.3. All things considered, the vaccination considerably lowers the risk of infection for LGBT people, demonstrating its efficacy in this demographic.
 
+## Conclusion for Druggies
+The effectiveness of the COVID vaccine for drug users is 91.3%, with a confidence interval between 78.0% and 97.3%. This conclusion is well supported by statistical tests: The null hypothesis of no vaccine impact was rejected by Fisher's Exact Test, which revealed an exceptionally significant p-value (\(p = 3 \times 10^{-12}\)). With an odds ratio of 0.087, drug users who got the vaccine had an approximate 11.5-fold lower risk of contracting the infection than those who took a placebo. Overall, the vaccine's substantial protective impact against drug users is supported by its maximal effectiveness in lowering their rates of COVID infection.
+
 
 
